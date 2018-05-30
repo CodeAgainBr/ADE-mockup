@@ -1,0 +1,288 @@
+<section>
+	<div class="row">
+		<div class="col-12">
+			<table class="table table-cadastro">
+      	<thead>
+      		<tr class="row no-gutters">
+          	<th class="col col-pagination">
+          		<div class="btn-group" role="group">
+                <button class="btn btn-outline-success" ng-class="page1" ng-click="trocarPage(1)">Informações Gerais</button>
+                <button class="btn btn-outline-success" ng-class="page2" ng-click="trocarPage(2)">Contato</button>
+                <button class="btn btn-outline-success" ng-class="page3" ng-click="trocarPage(3)">Endereço do Clube</button>
+                <button class="btn btn-outline-success" ng-class="page4" ng-click="trocarPage(4)" ng-if="possuiCampo">Endereço do Campo</button>
+              </div>
+            </th>
+          </tr>
+      	</thead>
+        <tbody>
+		  		<tr class="row no-gutters" ng-class="aba1">
+		  			<td class="col-sm-2 col"><label for="nome">Nome:</label></td>
+		  			<td class="col">
+		  				<input id="nome" type="text" ng-model="clube.nome" class="form-control btn-sm">
+		  			</td>
+		  		</tr>
+          <tr class="row no-gutters" ng-class="aba1">
+            <td class="col-sm-2 col"><label for="dataFundacao">Data de Fundação:</label></td>
+            <td class="col">
+              <input id="dataFundacao" type="text" ng-model="clube.dataFundacao" class="form-control btn-sm date">
+            </td>
+          </tr>
+          <tr class="row no-gutters" ng-class="aba1">
+            <td class="col-sm-2 col"><label for="uniforme">Cor do Uniforme:</label></td>
+            <td class="col">
+              <input id="uniforme" type="text" ng-model="clube.uniforme" class="form-control btn-sm">
+            </td>
+          </tr>
+          <tr class="row no-gutters" ng-class="aba1">
+            <td class="col-sm-2 col"><label for="categoria">Categoria:</label></td>
+            <td class="col">
+              <input id="categoria" type="text" ng-model="clube.categoria" class="form-control btn-sm">
+            </td>
+          </tr>
+          <tr class="row no-gutters" ng-class="aba1">
+            <td class="col-sm-2 col">
+            	<input id="possuiCampo" type="checkbox" ng-model="possuiCampo">
+            	<label for="possuiCampo">Possui Campo:</label>
+            </td>
+          </tr>
+          <tr class="row no-gutters" ng-class="aba2">
+            <td class="col-sm-2 col"><label for="telefoneClube">Telefone do Clube:</label></td>
+            <td class="col">
+              <input id="telefoneClube" type="text" ng-model="clube.telefoneClube" class="form-control btn-sm telefone">
+            </td>
+          </tr>
+          <tr class="row no-gutters" ng-class="aba2">
+            <td class="col-sm-2 col"><label for="nomeContato">Nome do Contato:</label></td>
+            <td class="col">
+              <input id="nomeContato" type="text" ng-model="clube.nomeContato" class="form-control btn-sm">
+            </td>
+          </tr>
+          <tr class="row no-gutters" ng-class="aba2">
+            <td class="col-sm-2 col"><label for="telefoneContato">Telefone do Contato:</label></td>
+            <td class="col">
+              <input id="telefoneContato" type="text" ng-model="clube.telefoneContato" class="form-control btn-sm celular">
+            </td>
+          </tr>
+          <tr class="row no-gutters" ng-class="aba3">
+            <td class="col-sm-2 col-3"><label for="cepClube">CEP:</label></td>
+            <td class="col">
+              <input id="cepClube" type="text" ng-model="clube.cepClube" class="form-control btn-sm cep">
+            </td>
+          </tr>
+          <tr class="row no-gutters" ng-class="aba3">
+            <td class="col-sm-2 col-3"><label for="ruaClube">Rua:</label></td>
+            <td class="col">
+              <input id="ruaClube" type="text" ng-model="clube.ruaClube" class="form-control btn-sm">
+            </td>
+          <tr class="row no-gutters" ng-class="aba3">
+            <td class="col-sm-2 col-3"><label for="numeroClube">Nº:</label></td>
+            <td class="col">
+              <input id="numeroClube" type="text" ng-model="clube.numeroClube" class="form-control btn-sm">
+            </td>
+          <tr class="row no-gutters" ng-class="aba3">
+            <td class="col-sm-2 col-3"><label for="bairroClube">Bairro:</label></td>
+            <td class="col">
+              <input id="bairroClube" type="text" ng-model="clube.bairroClube" class="form-control btn-sm">
+            </td>
+          <tr class="row no-gutters" ng-class="aba3">
+            <td class="col-sm-2 col-3"><label for="cidadeClube">Cidade:</label></td>
+            <td class="col">
+              <input id="cidadeClube" type="text" ng-model="clube.cidadeClube" class="form-control btn-sm">
+            </td>
+          <tr class="row no-gutters" ng-class="aba3">
+            <td class="col-sm-2 col-3"><label for="estadoClube">Estado:</label></td>
+            <td class="col">
+              <input id="estadoClube" type="text" ng-model="clube.estadoClube" class="form-control btn-sm" maxlength="2">
+            </td>
+          </tr>
+          <tr class="row no-gutters" ng-class="aba4">
+            <td class="col-sm-2 col-3"><label for="cepCampo">CEP:</label></td>
+            <td class="col">
+              <input id="cepCampo" type="text" ng-model="clube.cepCampo" class="form-control btn-sm cep">
+            </td>
+          </tr>
+          <tr class="row no-gutters" ng-class="aba4">
+            <td class="col-sm-2 col-3"><label for="ruaCampo">Rua:</label></td>
+            <td class="col">
+              <input id="ruaCampo" type="text" ng-model="clube.ruaCampo" class="form-control btn-sm">
+            </td>
+          <tr class="row no-gutters" ng-class="aba4">
+            <td class="col-sm-2 col-3"><label for="numeroCampo">Nº:</label></td>
+            <td class="col">
+              <input id="numeroCampo" type="text" ng-model="clube.numeroCampo" class="form-control btn-sm">
+            </td>
+          <tr class="row no-gutters" ng-class="aba4">
+            <td class="col-sm-2 col-3"><label for="bairroCampo">Bairro:</label></td>
+            <td class="col">
+              <input id="bairroCampo" type="text" ng-model="clube.bairroCampo" class="form-control btn-sm">
+            </td>
+          <tr class="row no-gutters" ng-class="aba4">
+            <td class="col-sm-2 col-3"><label for="cidadeCampo">Cidade:</label></td>
+            <td class="col">
+              <input id="cidadeCampo" type="text" ng-model="clube.cidadeCampo" class="form-control btn-sm">
+            </td>
+          <tr class="row no-gutters" ng-class="aba4">
+            <td class="col-sm-2 col-3"><label for="estadoCampo">Estado:</label></td>
+            <td class="col">
+              <input id="estadoCampo" type="text" ng-model="clube.estadoCampo" class="form-control btn-sm" maxlength="2">
+            </td>
+          <tr class="row no-gutters">
+            <td class="col-auto">
+            	<button class="btn btn-danger btn-sm" onclick="window.location = '#!/clubes';">Cancelar</button>
+            </td>
+            <td class="col-auto ml-auto">
+            	<button class="btn btn-info btn-sm" onclick="window.location = '#!/clubes';">Salvar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+		</div>
+	</div>
+</section>
+
+<script>
+	$(document).ready(function() {
+		$('.cep').mask('00000-000');
+		$('.date').mask('00/00/0000');
+    $('.telefone').mask('(00) 0000-0000');
+    $('.celular').mask('(00) 00000-0000');
+	});
+
+	$(document).ready(function(){
+		function limpa_formulario_cep_Clube() {
+      // Limpa valores do formulário de cep.
+      $("#ruaClube").val("");
+      $("#bairroClube").val("");
+      $("#cidadeClube").val("");
+      $("#estadoClube").val("");
+      $("#ruaClube").prop('disabled', false);
+      $("#bairroClube").prop('disabled', false);
+      $("#cidadeClube").prop('disabled', false);
+      $("#estadoClube").prop('disabled', false);
+    }
+    
+    //Quando o campo cep perde o foco.
+    $("#cepClube").blur(function() {
+
+      //Nova variável "cep" somente com dígitos.
+      var cep = $(this).val().replace(/\D/g, '');
+
+      //Verifica se campo cep possui valor informado.
+      if (cep != "") {
+
+          //Expressão regular para validar o CEP.
+          var validacep = /^[0-9]{8}$/;
+
+          //Valida o formato do CEP.
+          if(validacep.test(cep)) {
+            //Preenche os campos com "..." enquanto consulta webservice.
+            $("#ruaClube").val("...");
+            $("#bairroClube").val("...");
+            $("#cidadeClube").val("...");
+            $("#estadoClube").val("...");
+            $("#ruaClube").prop('disabled', true);
+            $("#bairroClube").prop('disabled', true);
+            $("#cidadeClube").prop('disabled', true);
+            $("#estadoClube").prop('disabled', true);
+
+            //Consulta o webservice viacep.com.br/
+            $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
+              if (!("erro" in dados)) {
+                //Atualiza os campos com os valores da consulta.
+                $("#ruaClube").val(dados.logradouro);
+                $("#bairroClube").val(dados.bairro);
+                $("#cidadeClube").val(dados.localidade);
+                $("#estadoClube").val(dados.uf);
+                $("#ruaClube").prop('disabled', true);
+                $("#bairroClube").prop('disabled', true);
+                $("#cidadeClube").prop('disabled', true);
+                $("#estadoClube").prop('disabled', true);
+              } //end if.
+              else {
+                //CEP pesquisado não foi encontrado.
+                limpa_formulario_cep_Clube();
+                alert("CEP não encontrado.");
+              }
+            });
+          } //end if.
+          else {
+            //cep é inválido.
+            limpa_formulario_cep_Clube();
+            alert("Formato de CEP inválido.");
+          }
+      } //end if.
+      else {
+        //cep sem valor, limpa formulário.
+        limpa_formulario_cep_Clube();
+      }
+    });
+
+		function limpa_formulario_cep_Campo() {
+      // Limpa valores do formulário de cep.
+      $("#ruaCampo").val("");
+      $("#bairroCampo").val("");
+      $("#cidadeCampo").val("");
+      $("#estadoCampo").val("");
+      $("#ruaCampo").prop('disabled', false);
+      $("#bairroCampo").prop('disabled', false);
+      $("#cidadeCampo").prop('disabled', false);
+      $("#estadoCampo").prop('disabled', false);
+    }
+    
+    //Quando o campo cep perde o foco.
+    $("#cepCampo").blur(function() {
+
+      //Nova variável "cep" somente com dígitos.
+      var cep = $(this).val().replace(/\D/g, '');
+
+      //Verifica se campo cep possui valor informado.
+      if (cep != "") {
+
+          //Expressão regular para validar o CEP.
+          var validacep = /^[0-9]{8}$/;
+
+          //Valida o formato do CEP.
+          if(validacep.test(cep)) {
+            //Preenche os campos com "..." enquanto consulta webservice.
+            $("#ruaCampo").val("...");
+            $("#bairroCampo").val("...");
+            $("#cidadeCampo").val("...");
+            $("#estadoCampo").val("...");
+            $("#ruaCampo").prop('disabled', true);
+            $("#bairroCampo").prop('disabled', true);
+            $("#cidadeCampo").prop('disabled', true);
+            $("#estadoCampo").prop('disabled', true);
+
+            //Consulta o webservice viacep.com.br/
+            $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
+              if (!("erro" in dados)) {
+                //Atualiza os campos com os valores da consulta.
+                $("#ruaCampo").val(dados.logradouro);
+                $("#bairroCampo").val(dados.bairro);
+                $("#cidadeCampo").val(dados.localidade);
+                $("#estadoCampo").val(dados.uf);
+                $("#ruaCampo").prop('disabled', true);
+				        $("#bairroCampo").prop('disabled', true);
+				        $("#cidadeCampo").prop('disabled', true);
+				        $("#estadoCampo").prop('disabled', true);
+              } //end if.
+              else {
+                //CEP pesquisado não foi encontrado.
+                limpa_formulario_cep_Campo();
+                alert("CEP não encontrado.");
+              }
+            });
+          } //end if.
+          else {
+            //cep é inválido.
+            limpa_formulario_cep_Campo();
+            alert("Formato de CEP inválido.");
+          }
+      } //end if.
+      else {
+        //cep sem valor, limpa formulário.
+        limpa_formulario_cep_Campo();
+      }
+    });
+	});
+</script>

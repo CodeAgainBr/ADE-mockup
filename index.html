@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sistema ADE</title>
+
+	<!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="dist/jquery.mask.min.js"></script>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+	<!-- AngularJS -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
+
+	<!-- JS -->
+	<script type="text/javascript" src="controller/config.js"></script>
+	<script type="text/javascript" src="controller/controller.js"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="dist/ade.css">
+</head>
+<body ng-app="SistemaADE">
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="#!">
+      <i class="fas fa-futbol bg-dark"></i>
+      <b>Sistema ADE</b>
+    </a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse"><span class="navbar-toggler-icon"></span></button>
+	  <div id="navbar-collapse" class="collapse navbar-collapse">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item">
+	        <a class="nav-link" href="#!clubes"><i class="fas fa-users"></i> Clubes</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#!associados"><i class="fas fa-user"></i> Associados</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#!agenda"><i class="fas fa-calendar-alt"></i> Agenda</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#!relatorios"><i class="fas fa-calendar-check"></i> Relatórios</a>
+	      </li>
+	    </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href=""><i class="fas fa-bell"></i> Notificações</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#!opcoes"><i class="fas fa-cog"></i> Opções</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#!"><i class="fas fa-sign-out-alt"></i> Sair</a>
+        </li>
+      </ul>
+	  </div>
+  </nav>
+  <div class="container">
+		<ng-view></ng-view>
+  </div>
+</body>
+</html>
