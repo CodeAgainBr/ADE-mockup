@@ -67,5 +67,13 @@
   <div class="container">
 		<ng-view></ng-view>
   </div>
+  <script>
+  	$('.navbar-brand').on('click', function(){
+	    $('.navbar-collapse').collapse('hide');
+		});
+  	$('.navbar-nav .nav-item').on('click', function(){
+	    $('.navbar-collapse').collapse('hide');
+		});
+  </script>
 </body>
 </html>
