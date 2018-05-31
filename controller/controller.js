@@ -24,61 +24,6 @@ angular.module('SistemaADE')
 			}
 		});
 	}
-
-	$rootScope.page1 = "active";
-	$rootScope.page2 = "";
-	$rootScope.page3 = "";
-	$rootScope.page4 = "";
-	$rootScope.aba1 = ""
-	$rootScope.aba2 = "hidden"
-	$rootScope.aba3 = "hidden"
-	$rootScope.aba4 = "hidden"
-
-	$rootScope.trocarPage = function(page) {
-		$rootScope.page = page;
-		switch(page) {
-			case 1:
-				$rootScope.page1 = "active";
-				$rootScope.page2 = "";
-				$rootScope.page3 = "";
-				$rootScope.page4 = "";
-				$rootScope.aba1 = ""
-				$rootScope.aba2 = "hidden"
-				$rootScope.aba3 = "hidden"
-				$rootScope.aba4 = "hidden"
-				break;
-			case 2:
-				$rootScope.page1 = "";
-				$rootScope.page2 = "active";
-				$rootScope.page3 = "";
-				$rootScope.page4 = "";
-				$rootScope.aba1 = "hidden"
-				$rootScope.aba2 = ""
-				$rootScope.aba3 = "hidden"
-				$rootScope.aba4 = "hidden"
-				break;
-			case 3:
-				$rootScope.page1 = "";
-				$rootScope.page2 = "";
-				$rootScope.page3 = "active";
-				$rootScope.page4 = "";
-				$rootScope.aba1 = "hidden"
-				$rootScope.aba2 = "hidden"
-				$rootScope.aba3 = ""
-				$rootScope.aba4 = "hidden"
-				break;
-			case 4:
-				$rootScope.page1 = "";
-				$rootScope.page2 = "";
-				$rootScope.page3 = "";
-				$rootScope.page4 = "active";
-				$rootScope.aba1 = "hidden"
-				$rootScope.aba2 = "hidden"
-				$rootScope.aba3 = "hidden"
-				$rootScope.aba4 = ""
-				break;
-		}
-	};
 }])
 
 .controller('loginCtrl', ['$rootScope', function($scope, $rootScope) {
@@ -106,8 +51,8 @@ angular.module('SistemaADE')
 	}
 }])
 
-.controller('homeCtrl', function($scope, ClubesService) {
-	ClubesService.search(0);
+.controller('homeCtrl', function($scope, JogosService) {
+	JogosService.search(0);
 })
 
 .controller('clubesCtrl', function($scope, ClubesService) {
@@ -119,7 +64,16 @@ angular.module('SistemaADE')
 	};
 })
 
-.controller('novoClubeCtrl', function($scope) {
+.controller('novoClubeCtrl', function($scope, Pagination) {
+	$scope.trocarPage = function(page) {
+		var pagination = Pagination.changePage(page);
+
+		$scope.page = pagination.page;
+		$scope.aba = pagination.aba;
+	}
+
+	$scope.trocarPage(0);
+
 	$scope.addClube = function() {
 		// $scope.clubes.push($scope.clube);
 		// ClubesService.insert($scope.clube);
@@ -127,39 +81,21 @@ angular.module('SistemaADE')
 	}
 })
 
-.controller('detalhesClubeCtrl', function($scope) {
-	$scope.clube = {
-		nome: "Associação Desportiva Eldorado",
-		dataFundacao: "10/10/2000",
-		uniforme: "Azul",
-		categoria: "Base",
-		possuiCampo: true,
-		telefoneClube: "4832423242",
-		nomeContato: "Vitor",
-		telefoneContato: "48984008400",
-		cepClube: 88135100,
-		ruaClube: "Avenida Bom Jesus de Nazaré",
-		numeroClube: 10,
-		bairroClube: "Aririu",
-		cidadeClube: "Palhoça",
-		estadoClube: "SC",
-		cepCampo: 88135100,
-		ruaCampo: "Avenida Bom Jesus de Nazaré",
-		numeroCampo: 10,
-		bairroCampo: "Aririu",
-		cidadeCampo: "Palhoça",
-		estadoCampo: "SC"
-	};
+.controller('detalhesClubeCtrl', function($scope, Pagination, ClubesService, $routeParams) {
+	$scope.trocarPage = function(page) {
+		var pagination = Pagination.changePage(page);
+
+		$scope.page = pagination.page;
+		$scope.aba = pagination.aba;
+	}
+
+	$scope.trocarPage(0);
+
+	ClubesService.search($routeParams.id);
 })
 
-.controller('associadosCtrl', function($scope) {
-	$scope.associados = [{
-		nome: "Associado 1"
-	},{
-		nome: "Associado 2"
-	},{
-		nome: "Associado 3"
-	}]
+.controller('associadosCtrl', function($scope, AssociadosService) {
+	AssociadosService.get();
 
 	$scope.apagarAssociado = function(index) {
 		if(confirm("Realmente deseja apagar o associado " + $scope.associados[index].nome + "?"))
@@ -167,42 +103,18 @@ angular.module('SistemaADE')
 	};
 })
 
-.controller('novoAssociadoCtrl', function($scope) {
-	$scope.associado = {
-		parentes: []
-	}
-})
+.controller('novoAssociadoCtrl', function($scope, Pagination) {
+	$scope.trocarPage = function(page) {
+		var pagination = Pagination.changePage(page);
 
-.controller('detalhesAssociadoCtrl', function($scope) {
-	$scope.associado = {
-		parentes: []
+		$scope.page = pagination.page;
+		$scope.aba = pagination.aba;
 	}
 
+	$scope.trocarPage(0);
+
 	$scope.associado = {
-		nome: "Vitor Reis",
-		dataNascimento: "10/10/2000",
-		localNascimento: "São José",
-		rg: "1234567",
-		cpf: "12345678911",
-		prato: "Macarronada",
-		observacoes: "Tem asma",
-		telefone: "48984008400",
-		email: "email@email.com",
-		cep: 88135100,
-		rua: "Avenida Bom Jesus de Nazaré",
-		numero: 10,
-		bairro: "Aririu",
-		cidade: "Palhoça",
-		estado: "SC",
-		parentes: [{
-			nome: "João",
-			parentesco: "Filho",
-			nascimento: "10/10/2017"
-		},{
-			nome: "Maria",
-			parentesco: "Filha",
-			nascimento: "10/10/2017"
-		}]
+		parentes: []
 	}
 
 	$scope.novoParente = function() {
@@ -218,8 +130,133 @@ angular.module('SistemaADE')
 	};
 })
 
-.controller('agendaCtrl', function($scope) {
-	$scope.teste = 'Agenda';
+.controller('detalhesAssociadoCtrl', function($scope, Pagination, AssociadosService, $routeParams) {
+	$scope.trocarPage = function(page) {
+		var pagination = Pagination.changePage(page);
+
+		$scope.page = pagination.page;
+		$scope.aba = pagination.aba;
+	}
+
+	$scope.trocarPage(0);
+
+	AssociadosService.search($routeParams.id);
+
+	$(document).ready(function() {
+		if(typeof($scope.associado) == 'undefined') {
+			$scope.associado = {
+				parentes: []
+			}
+		}
+	});
+
+	$scope.novoParente = function() {
+		$scope.associado.parentes.push({
+			nome: "",
+			parentesco: "",
+			dataNascimento: ""
+		})
+	};
+
+	$scope.apagarParente = function(index) {
+		$scope.associado.parentes.splice(index, 1);
+	};
+})
+
+.controller('jogosCtrl', function($scope, JogosService) {
+	JogosService.get();
+
+	$scope.apagarJogo = function(index) {
+		if(confirm("Realmente deseja apagar o jogo contra " + $scope.jogos[index].clube + "?"))
+		$scope.jogos.splice(index, 1);
+	};
+})
+
+.controller('novoJogoCtrl', function($scope, Pagination, ClubesService) {
+	$scope.trocarPage = function(page) {
+		var pagination = Pagination.changePage(page);
+
+		$scope.page = pagination.page;
+		$scope.aba = pagination.aba;
+	}
+
+	$scope.trocarPage(0);
+
+	ClubesService.get();
+
+	$('#clube').on('change', function() {
+    var index = $('#clube').val();
+    $scope.jogo = {
+	    cep: $scope.clubes[index].cepCampo,
+	    rua: $scope.clubes[index].ruaCampo,
+	    numero: $scope.clubes[index].numeroCampo,
+	    bairro: $scope.clubes[index].bairroCampo,
+	    cidade: $scope.clubes[index].cidadeCampo,
+	    estado: $scope.clubes[index].estadoCampo
+    }
+  });
+})
+
+.controller('detalhesJogoCtrl', function($scope, Pagination, ClubesService, JogosService, $routeParams) {
+	$scope.trocarPage = function(page) {
+		var pagination = Pagination.changePage(page);
+
+		$scope.page = pagination.page;
+		$scope.aba = pagination.aba;
+	}
+
+	$scope.trocarPage(0);
+
+	ClubesService.get();
+
+	JogosService.search($routeParams.id);
+
+	$(document).ready(function() {
+		$('#clube').val($routeParams.id);
+	});
+
+	$('#clube').on('change', function() {
+    var index = $('#clube').val();
+    $scope.jogo = {
+	    cep: $scope.clubes[index].cepCampo,
+	    rua: $scope.clubes[index].ruaCampo,
+	    numero: $scope.clubes[index].numeroCampo,
+	    bairro: $scope.clubes[index].bairroCampo,
+	    cidade: $scope.clubes[index].cidadeCampo,
+	    estado: $scope.clubes[index].estadoCampo
+    }
+  });
+})
+
+.controller('agendaCtrl', function($scope, JogosService) {
+	JogosService.get();
+
+	$scope.apagarJogo = function(index) {
+		if(confirm("Realmente deseja apagar o jogo contra " + $scope.jogos[index].clube + "?"))
+		$scope.jogos.splice(index, 1);
+	};
+})
+
+.controller('novoRelatorioIndividualCtrl', function($scope, Pagination, JogosService, AssociadosService, $routeParams) {
+	$scope.relatorioIndividual = false;
+
+	$scope.trocarPage = function(page) {
+		var pagination = Pagination.changePage(page);
+
+		$scope.page = pagination.page;
+		$scope.aba = pagination.aba;
+	}
+
+	$scope.trocarPage(0);
+	
+	JogosService.search($routeParams.id);
+
+	AssociadosService.get();
+
+	$scope.carregarAssociado = function(index) {
+		$scope.relatorioIndividual = true;
+		$scope.associado = $scope.associados[index];
+	}
 })
 
 .controller('relatoriosCtrl', function($scope) {

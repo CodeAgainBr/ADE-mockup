@@ -1,7 +1,7 @@
 <?php
 
 $clubes = '[{
-		"nome": "Associação Desportiva Eldorado",
+		"nome": "Clube 1",
 		"dataFundacao": "10/10/2000",
 		"uniforme": "Azul",
 		"categoria": "Base",

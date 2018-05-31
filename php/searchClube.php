@@ -3,9 +3,10 @@
 $id = $_POST['id'];
 
 $clubes = '[{
-		"nome": "Associação Desportiva Eldorado",
+		"id": 1
+		"nome": "Clube 1",
 		"dataFundacao": "10/10/2000",
-		"uniforme": "Azul",
+		"uniforme": "Amarelo",
 		"categoria": "Base",
 		"possuiCampo": true,
 		"telefoneClube": "4832423242",
@@ -24,6 +25,7 @@ $clubes = '[{
 		"cidadeCampo": "Palhoça",
 		"estadoCampo": "SC"
 	},{
+		"id": 2
 		"nome": "Clube 2",
 		"dataFundacao": "10/10/2001",
 		"uniforme": "Vermelho",
@@ -45,6 +47,7 @@ $clubes = '[{
 		"cidadeCampo": "Palhoça",
 		"estadoCampo": "SC"
 	},{
+		"id": 3
 		"nome": "Clube 3",
 		"dataFundacao": "10/10/2002",
 		"uniforme": "Verde",

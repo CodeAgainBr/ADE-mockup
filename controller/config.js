@@ -16,7 +16,7 @@ angular.module("SistemaADE", ["ngRoute"])
     controller: "novoClubeCtrl"
   })
 
-  .when("/clubes/detalhes", {
+  .when("/clubes/:id/detalhes", {
     templateUrl: "view/detalhesClube.html",
     controller: "detalhesClubeCtrl"
   })
@@ -31,14 +31,34 @@ angular.module("SistemaADE", ["ngRoute"])
     controller: "novoAssociadoCtrl"
   })
 
-  .when("/associados/detalhes", {
+  .when("/associados/:id/detalhes", {
     templateUrl: "view/detalhesAssociado.html",
     controller: "detalhesAssociadoCtrl"
+  })
+
+  .when("/jogos", {
+    templateUrl: "view/jogos.html",
+    controller: "jogosCtrl"
+  })
+
+  .when("/jogos/novo", {
+    templateUrl: "view/novoJogo.html",
+    controller: "novoJogoCtrl"
+  })
+
+  .when("/jogos/:id/detalhes", {
+    templateUrl: "view/detalhesJogo.html",
+    controller: "detalhesJogoCtrl"
   })
 
   .when("/agenda", {
     templateUrl: "view/agenda.html",
     controller: "agendaCtrl"
+  })
+
+  .when("/agenda/:id/relatorio", {
+    templateUrl: "view/novoRelatorioIndividual.html",
+    controller: "novoRelatorioIndividualCtrl"
   })
 
   .when("/relatorios", {

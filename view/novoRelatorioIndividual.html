@@ -1,0 +1,102 @@
+<section>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-cadastro">
+        <thead>
+          <tr class="row no-gutters">
+            <th class="col col-pagination col-pagination-associados">
+              <div class="btn-group" role="group">
+                <button class="btn btn-outline-success" ng-class="page[0]" ng-click="trocarPage(0)">Informações Gerais</button>
+                <button class="btn btn-outline-success" ng-class="page[1]" ng-click="trocarPage(1)">Lista de Associados</button>
+                <button class="btn btn-outline-success" ng-class="page[2]" ng-click="trocarPage(2)" ng-if="relatorioIndividual">Relatório Individual</button>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row no-gutters" ng-class="aba[0]">
+            <td class="col">
+              Associação Desportiva Eldorado X {{jogo.clube}}
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[0]">
+            <td class="col-lg-1 col-sm-2 col-3">
+              <label for="placarAde">Placar: </label>
+            </td>
+
+            <td class="col-1">
+              <input id="placarAde" type="text" ng-model="relatorio.placarAde" class="form-control btn-sm placar" placeholder="Ex: 1">
+            </td>
+
+            <td class="col-auto">
+              X
+            </td>
+
+            <td class="col-1 mr-auto">
+              <input id="cep" type="text" ng-model="relatorio.placarRival" class="form-control btn-sm placar" placeholder="Ex: 2" max-value="99">
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[1]">
+            <td class="col">
+              <table class="table table-stripped">
+                <thead>
+                  <tr>
+                    <button class="btn btn-success btn-block btn-lg btn-table">
+                      Associados
+                    </button>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="row no-gutters" ng-repeat="associado in associados">
+                    <td class="col-xl-10 col-sm-8 col-5">
+                      {{associado.nome}}
+                    </td>
+
+                    <td class="col-auto ml-auto">
+                      <button class="btn btn-outline-success btn-sm" ng-click="carregarAssociado($index)">Fazer Relatório</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[2]">
+            <td class="col">
+              Relatório individual de {{associado.nome}}
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[2]">
+            <td class="col-lg-1 col-sm-2 col-3">
+              <label for="presenca">Presença: </label>
+            </td>
+
+            <td class="col">
+              <select class="form-control">
+                <option>Titular</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr class="row no-gutters">
+            <td class="col-auto">
+              <button class="btn btn-danger btn-sm" onclick="window.location = '#!/jogos';">Cancelar</button>
+            </td>
+            <td class="col-auto ml-auto">
+              <button class="btn btn-info btn-sm" onclick="window.location = '#!/jogos';">Salvar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<script>
+  $(document).ready(function() {
+    $('.placar').mask('00');
+  });
+</script>

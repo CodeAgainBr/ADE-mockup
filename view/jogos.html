@@ -4,8 +4,8 @@
       <table class="table table-stripped">
       	<thead>
       		<tr>
-      			<a class="btn btn-success btn-block btn-lg btn-table" href="">
-      				Junho de 2018
+      			<a class="btn btn-success btn-block btn-lg btn-table" href="#!jogos/novo">
+      				<i class="fas fa-plus"></i> Incluir Novo Jogo
       			</a>
       		</tr>
       	</thead>
@@ -20,7 +20,11 @@
             </td>
 
             <td class="col-sm-auto col-6">
-              <a class="btn btn-outline-success btn-sm btn-block" ng-href="#!agenda/{{$index}}/relatorio">Fazer Relatório</a>
+              <a class="btn btn-outline-success btn-sm btn-block" ng-href="#!jogos/{{$index}}/detalhes">Detalhes</a>
+            </td>
+
+            <td class="col-sm-auto col-6">
+              <button class="btn btn-danger btn-sm btn-block" ng-click="apagarJogo($index)">Apagar</button>
             </td>
           </tr>
         </tbody>

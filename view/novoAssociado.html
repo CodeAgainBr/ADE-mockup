@@ -6,30 +6,30 @@
       		<tr class="row no-gutters">
           	<th class="col col-pagination col-pagination-associados">
           		<div class="btn-group" role="group">
-                <button class="btn btn-outline-success" ng-class="page1" ng-click="trocarPage(1)">Informações Gerais</button>
-                <button class="btn btn-outline-success" ng-class="page2" ng-click="trocarPage(2)">Contato</button>
-                <button class="btn btn-outline-success" ng-class="page3" ng-click="trocarPage(3)">Endereço</button>
-                <button class="btn btn-outline-success" ng-class="page4" ng-click="trocarPage(4)">Parentes</button>
+                <button class="btn btn-outline-success" ng-class="page[0]" ng-click="trocarPage(0)">Informações Gerais</button>
+                <button class="btn btn-outline-success" ng-class="page[1]" ng-click="trocarPage(1)">Contato</button>
+                <button class="btn btn-outline-success" ng-class="page[2]" ng-click="trocarPage(2)">Endereço</button>
+                <button class="btn btn-outline-success" ng-class="page[3]" ng-click="trocarPage(3)">Parentes</button>
               </div>
             </th>
           </tr>
       	</thead>
         <tbody>
-		  		<tr class="row no-gutters" ng-class="aba1">
+		  		<tr class="row no-gutters" ng-class="aba[0]">
             <td class="col-sm-2 col"><label for="nome">Nome:</label></td>
             <td class="col">
               <input id="nome" type="text" ng-model="associado.nome" class="form-control btn-sm" placeholder="Nome">
             </td>
           </tr>
 
-          <tr class="row no-gutters" ng-class="aba1">
+          <tr class="row no-gutters" ng-class="aba[0]">
             <td class="col-sm-2 col"><label for="dataNascimento">Data de Nascimento:</label></td>
             <td class="col">
               <input id="dataNascimento" type="text" ng-model="associado.dataNascimento" class="form-control btn-sm date" placeholder="Ex: 10/10/2000">
             </td>
           </tr>
 
-          <tr class="row no-gutters" ng-class="aba1">
+          <tr class="row no-gutters" ng-class="aba[0]">
             <td class="col-sm-2 col">
               <label for="localNascimento">Local de Nascimento:</label>
             </td>
@@ -39,7 +39,7 @@
             </td>
           </tr>
 
-          <tr class="row no-gutters" ng-class="aba1">
+          <tr class="row no-gutters" ng-class="aba[0]">
             <td class="col-sm-2 col">
               <label for="rg">RG:</label>
             </td>
@@ -49,7 +49,7 @@
             </td>
           </tr>
 
-          <tr class="row no-gutters" ng-class="aba1">
+          <tr class="row no-gutters" ng-class="aba[0]">
             <td class="col-sm-2 col">
               <label for="cpf">CPF:</label>
             </td>
@@ -59,7 +59,7 @@
             </td>
           </tr>
 
-          <tr class="row no-gutters" ng-class="aba1">
+          <tr class="row no-gutters" ng-class="aba[0]">
             <td class="col-sm-2 col">
               <label for="prato">Prato Predileto:</label>
             </td>
@@ -69,7 +69,7 @@
             </td>
           </tr>
 
-          <tr class="row no-gutters" ng-class="aba1">
+          <tr class="row no-gutters" ng-class="aba[0]">
             <td class="col-sm-2 col">
               <label for="observacoes">Observações:</label>
             </td>
@@ -79,7 +79,7 @@
             </td>
           </tr>
 
-          <tr class="row no-gutters" ng-class="aba2">
+          <tr class="row no-gutters" ng-class="aba[1]">
             <td class="col-lg-1 col-sm-2 col-3">
               <label for="telefone">Telefone:</label>
             </td>
@@ -89,7 +89,7 @@
             </td>
           </tr>
 
-          <tr class="row no-gutters" ng-class="aba2">
+          <tr class="row no-gutters" ng-class="aba[1]">
             <td class="col-lg-1 col-sm-2 col-3">
               <label for="email">E-mail:</label>
             </td>
@@ -99,7 +99,7 @@
             </td>
           </tr>
 
-          <tr class="row no-gutters" ng-class="aba3">
+          <tr class="row no-gutters" ng-class="aba[2]">
             <td class="col-lg-1 col-sm-2 col-3">
               <label for="cep">CEP:</label>
             </td>
@@ -109,7 +109,7 @@
             </td>
           </tr>
 
-          <tr class="row no-gutters" ng-class="aba3">
+          <tr class="row no-gutters" ng-class="aba[2]">
             <td class="col-lg-1 col-sm-2 col-3">
               <label for="rua">Rua:</label>
             </td>
@@ -119,7 +119,7 @@
             </td>
           </tr>
 
-          <tr class="row no-gutters" ng-class="aba3">
+          <tr class="row no-gutters" ng-class="aba[2]">
             <td class="col-lg-1 col-sm-2 col-3">
               <label for="numero">Nº:</label>
             </td>
@@ -129,7 +129,7 @@
             </td>
           </tr>
 
-          <tr class="row no-gutters" ng-class="aba3">
+          <tr class="row no-gutters" ng-class="aba[2]">
             <td class="col-lg-1 col-sm-2 col-3">
               <label for="bairro">Bairro:</label>
             </td>
@@ -139,7 +139,7 @@
             </td>
           </tr>
 
-          <tr class="row no-gutters" ng-class="aba3">
+          <tr class="row no-gutters" ng-class="aba[2]">
             <td class="col-lg-1 col-sm-2 col-3">
               <label for="cidade">Cidade:</label>
             </td>
@@ -149,7 +149,7 @@
             </td>
           </tr>
 
-          <tr class="row no-gutters" ng-class="aba3">
+          <tr class="row no-gutters" ng-class="aba[2]">
             <td class="col-lg-1 col-sm-2 col-3">
               <label for="estado">Estado:</label>
             </td>
@@ -159,7 +159,7 @@
             </td>
           </tr>
 
-          <tr class="row no-gutters" ng-class="aba4">
+          <tr class="row no-gutters" ng-class="aba[3]">
             <td class="col">
               <table class="table table-stripped">
                 <thead>

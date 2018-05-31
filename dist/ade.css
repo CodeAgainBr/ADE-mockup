@@ -94,6 +94,14 @@ table tbody tr:last-child {
 	border-radius: 0px 0px 10px 10px;
 }
 
+.bg-dark {
+	background-color: black !important;
+}
+
+.text-dark {
+	color: black !important;
+}
+
 .btn-dark, .bg-dark {
 	background-color: black !important;
 }
@@ -145,4 +153,65 @@ input[type="checkbox"]:checked + label:after {
 
 textarea.form-control {
 	min-height: 31px !important;
+}
+
+h3.text-center {
+	width: 100%;
+}
+
+.card {
+	border-radius: 10px;
+	background: radial-gradient(#28a745 60%, darkgreen);
+}
+
+.card.with-border .card-head {
+	border-bottom: 1px solid black;
+}
+
+.card .card-body {
+	border-radius: 10px;
+}
+
+.card .card-body .vs {
+	border-radius: 5px;
+}
+
+.card .card-body .vs h3 {
+	font-size: 3em;
+}
+
+.card.with-border .card-footer {
+	border-top: 1px solid black;
+}
+
+@media(min-width: 720px) {
+	.card.t-5 {
+		margin-top: 50px;
+	}
+
+	.card.t-10 {
+		margin-top: 100px;
+	}
+}
+
+@media(max-width: 720px) {
+	.card .text-left {
+		text-align: center !important;
+	}
+
+	.card .text-right {
+		text-align: center !important;
+	}
+}
+
+.card.with-border {
+	border: 1px solid black;
+}
+
+.card .card-body {
+	text-shadow: 1px 1px #28a745;
+}
+
+.card .card-head, .card .card-footer {
+	text-shadow: 2px 2px black;
 }
