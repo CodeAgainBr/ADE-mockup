@@ -1,1 +1,30 @@
-<section>{{teste}}</section>
+<section>
+	<div class="row">
+    <div class="col-12">
+      <table class="table table-stripped">
+      	<thead>
+      		<tr>
+      			<a class="btn btn-success btn-block btn-lg btn-table" href="#!associados/novo">
+      				<i class="fas fa-plus"></i> Incluir Novo Associado
+      			</a>
+      		</tr>
+      	</thead>
+        <tbody>
+          <tr class="row no-gutters" ng-repeat="associado in associados">
+            <td class="col-xl-10 col-sm-8 col-5">
+              {{associado.nome}}
+            </td>
+
+            <td class="col-auto ml-auto">
+              <a class="btn btn-outline-success btn-sm" href="#!associados/detalhes">Detalhes</a>
+            </td>
+
+            <td class="col-auto">
+              <button class="btn btn-danger btn-sm" ng-click="apagarAssociado($index)">Apagar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

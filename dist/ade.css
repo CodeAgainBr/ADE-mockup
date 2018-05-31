@@ -33,7 +33,12 @@ table thead tr {
 }
 
 @media(max-width: 720px) {
-	.col-pagination .btn-group .btn {
+	.col-pagination.col-pagination-associados .btn-group .btn {
+		font-size: 0.8em;
+		padding: 4px;
+	}
+
+	.col-pagination.col-pagination-clubes .btn-group .btn {
 		font-size: 0.55em;
 		padding: 4px;
 	}
@@ -136,4 +141,8 @@ input[type="checkbox"]:checked + label:after {
  
 input[type="checkbox"]:checked + label:after {
   font-weight: bold;
+}
+
+textarea.form-control {
+	min-height: 31px !important;
 }

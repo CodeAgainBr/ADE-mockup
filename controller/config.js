@@ -26,6 +26,16 @@ angular.module("SistemaADE", ["ngRoute"])
     controller: "associadosCtrl"
   })
 
+  .when("/associados/novo", {
+    templateUrl: "view/novoAssociado.html",
+    controller: "novoAssociadoCtrl"
+  })
+
+  .when("/associados/detalhes", {
+    templateUrl: "view/detalhesAssociado.html",
+    controller: "detalhesAssociadoCtrl"
+  })
+
   .when("/agenda", {
     templateUrl: "view/agenda.html",
     controller: "agendaCtrl"
@@ -39,5 +49,9 @@ angular.module("SistemaADE", ["ngRoute"])
   .when("/opcoes", {
     templateUrl: "view/opcoes.html",
     controller: "opcoesCtrl"
+  })
+
+  .otherwise({
+    redirectTo : '/'
   });
 });

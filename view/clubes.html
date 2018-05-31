@@ -10,31 +10,17 @@
       		</tr>
       	</thead>
         <tbody>
-          <tr class="row no-gutters">
-            <td class="col-xl-10 col-sm-8 col-5">Clube 1</td>
+          <tr class="row no-gutters" ng-repeat="clube in clubes">
+            <td class="col-xl-10 col-sm-8 col-5">
+              {{clube.nome}}
+            </td>
+
             <td class="col-auto ml-auto">
               <a class="btn btn-outline-success btn-sm" href="#!clubes/detalhes">Detalhes</a>
             </td>
+
             <td class="col-auto">
-              <a class="btn btn-danger btn-sm" href="">Apagar</a>
-            </td>
-          </tr>
-          <tr class="row no-gutters">
-            <td class="col-xl-10 col-sm-8 col-5">Clube 2</td>
-            <td class="col-auto ml-auto">
-              <a class="btn btn-outline-success btn-sm" href="#!clubes/detalhes">Detalhes</a>
-            </td>
-            <td class="col-auto">
-              <a class="btn btn-danger btn-sm" href="">Apagar</a>
-            </td>
-          </tr>
-          <tr class="row no-gutters">
-            <td class="col-xl-10 col-sm-8 col-5">Clube 3</td>
-            <td class="col-auto ml-auto">
-              <a class="btn btn-outline-success btn-sm" href="#!clubes/detalhes">Detalhes</a>
-            </td>
-            <td class="col-auto">
-              <a class="btn btn-danger btn-sm" href="">Apagar</a>
+              <button class="btn btn-danger btn-sm" ng-click="apagarClube($index)">Apagar</button>
             </td>
           </tr>
         </tbody>

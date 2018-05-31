@@ -25,12 +25,13 @@
 	<!-- JS -->
 	<script type="text/javascript" src="controller/config.js"></script>
 	<script type="text/javascript" src="controller/controller.js"></script>
+	<script type="text/javascript" src="controller/service.js"></script>
 
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="dist/ade.css">
 </head>
 <body ng-app="SistemaADE">
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark" ng-if="auth">
     <a class="navbar-brand" href="#!">
       <i class="fas fa-futbol bg-dark"></i>
       <b>Sistema ADE</b>
@@ -59,13 +60,39 @@
           <a class="nav-link" href="#!opcoes"><i class="fas fa-cog"></i> Opções</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#!"><i class="fas fa-sign-out-alt"></i> Sair</a>
+          <a class="nav-link" ng-click="logout()" href=""><i class="fas fa-sign-out-alt"></i> Sair</a>
         </li>
       </ul>
 	  </div>
   </nav>
   <div class="container">
-		<ng-view></ng-view>
+		<ng-view ng-if="auth"></ng-view>
+		<div class="loginScreen" ng-if="!auth" ng-controller="loginCtrl">
+			<div class="container py-5">
+				<div class="row py-5">
+				  <div class="offset-3 col-6">
+				    <div class="card text-white p-5 bg-dark">
+				      <div class="card-body">
+				        <h1 style="text-align: center">Login</h1>
+				        <form>
+				          <div class="row">
+				            <input id="login" type="text" class="form-control" placeholder="Login">
+				          </div>
+				          <br>
+				          <div class="row">
+				            <input id="senha" type="password" class="form-control" placeholder="Senha">
+				          </div>
+				          <br>
+				          <div class="row">
+				            <button type="button" class="btn btn-success btn-block" ng-click="logar()">Entrar</button>
+				          </div>
+				        </form>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</div>
+		</div>
   </div>
   <script>
   	$('.navbar-brand').on('click', function(){
@@ -74,6 +101,13 @@
   	$('.navbar-nav .nav-item').on('click', function(){
 	    $('.navbar-collapse').collapse('hide');
 		});
+
+		// $.ajax({
+		// 	url: "view/login.html",
+		// 	success: function(data) {
+		// 		$('.loginScreen').html(data);
+		// 	}
+		// });
   </script>
 </body>
 </html>
