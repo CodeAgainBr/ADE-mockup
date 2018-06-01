@@ -215,3 +215,7 @@ h3.text-center {
 .card .card-head, .card .card-footer {
 	text-shadow: 2px 2px black;
 }
+
+select.btn-sm {
+	height: 30px !important;
+}

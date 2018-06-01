@@ -70,23 +70,81 @@
           </tr>
 
           <tr class="row no-gutters" ng-class="aba[2]">
-            <td class="col-lg-1 col-sm-2 col-3">
+            <td class="col-sm-2 col-3">
               <label for="presenca">Presença: </label>
             </td>
 
             <td class="col">
-              <select class="form-control">
+              <select class="form-control btn-sm">
                 <option>Titular</option>
               </select>
             </td>
           </tr>
 
+          <tr class="row no-gutters" ng-class="aba[2]">
+            <td class="col-sm-2 col-3">
+              <label for="golsFeitos">Gols feitos: </label>
+            </td>
+
+            <td class="col">
+              <input id="golsFeitos" type="text" ng-model="associado.golsFeitos" class="form-control btn-sm placar" placeholder="Ex: 2">
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[2]">
+            <td class="col">
+              <input id="goleiro" type="checkbox" ng-model="associado.goleiro">
+              <label for="goleiro">Goleiro: </label>
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[2]" ng-if="associado.goleiro">
+            <td class="col-sm-2 col-3">
+              <label for="golsFeitos">Gols sofridos: </label>
+            </td>
+
+            <td class="col">
+              <input id="golsSofridos" type="text" ng-model="associado.golsSofridos" class="form-control btn-sm placar" placeholder="Ex: 1">
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[2]">
+            <td class="col">
+              <input id="confraternizacao" type="checkbox" ng-model="associado.confraternizacao">
+              <label for="confraternizacao">Confraternização: </label>
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[2]">
+            <td class="col">
+              <input id="machucado" type="checkbox" ng-model="associado.machucado">
+              <label for="machucado">Machucado: </label>
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[2]">
+            <td class="col-sm-2 col-3">
+              <label for="cartoesAmarelos">Cartões Amarelos: </label>
+            </td>
+
+            <td class="col-1">
+              <input id="cartoesAmarelos" type="text" ng-model="associado.cartoesAmarelos" class="form-control btn-sm placar" placeholder="Ex: 2">
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[2]">
+            <td class="col">
+              <input id="cartaoVermelho" type="checkbox" ng-model="associado.cartaoVermelho">
+              <label for="cartaoVermelho">Cartão Vermelho: </label>
+            </td>
+          </tr>
+
           <tr class="row no-gutters">
             <td class="col-auto">
-              <button class="btn btn-danger btn-sm" onclick="window.location = '#!/jogos';">Cancelar</button>
+              <button class="btn btn-danger btn-sm" onclick="window.location = '#!/agenda';">Cancelar</button>
             </td>
             <td class="col-auto ml-auto">
-              <button class="btn btn-info btn-sm" onclick="window.location = '#!/jogos';">Salvar</button>
+              <button class="btn btn-info btn-sm" onclick="window.location = '#!/agenda';">Salvar</button>
             </td>
           </tr>
         </tbody>

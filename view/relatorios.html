@@ -1,1 +1,136 @@
-<section>{{teste}}</section>
+<section>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-cadastro">
+        <thead>
+          <tr class="row no-gutters">
+            <th class="col col-pagination col-pagination-associados">
+              <div class="btn-group" role="group">
+                <button class="btn btn-outline-success" ng-class="page[0]" ng-click="trocarPage(0)">Gols</button>
+                <button class="btn btn-outline-success" ng-class="page[1]" ng-click="trocarPage(1)">Jogadores</button>
+                <button class="btn btn-outline-success" ng-class="page[2]" ng-click="trocarPage(2)" ng-if="relatorioIndividual">Individual</button>
+                <button class="btn btn-outline-success" ng-class="page[3]" ng-click="trocarPage(3)">Prato Preferido</button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row no-gutters" ng-class="aba[0]">
+            <td class="col">
+              Quantidade de jogos totais: <b>{{relatorios.totalJogos}}</b>
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[0]">
+            <td class="col">
+            	Média de gols do mês atual: <b>{{relatorios.mediaGolsMesAtual}}</b>
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[0]">
+            <td class="col">
+            	Jogador destaque do mês: <b>{{relatorios.jogadorDestaqueMes}}</b>
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[0]">
+            <td class="col">
+            	Goleiro que mais sofreu gols no mês: <b>{{relatorios.goleiroFrangoMes}}</b>
+            </td>
+          </tr>
+
+					<tr class="row no-gutters" ng-class="aba[1]">
+            <td class="col">
+            	<table class="table table-stripped">
+				      	<thead>
+				      		<tr>
+				      			<button class="btn btn-success btn-block btn-lg btn-table">
+				      				Associados
+				      			</button>
+				      		</tr>
+				      	</thead>
+				        <tbody>
+				          <tr class="row no-gutters" ng-repeat="associado in associados">
+				            <td class="col-xl-10 col-sm-8 col-5">
+				              {{associado.nome}}
+				            </td>
+
+				            <td class="col-auto ml-auto">
+				              <button class="btn btn-outline-success btn-sm" ng-click="carregarAssociado($index)">Relatório</button>
+				            </td>
+				          </tr>
+				        </tbody>
+				      </table>
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[2]">
+            <td class="col">
+              Total de gols marcados: <b>{{associado.golsMarcados}}</b>
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[2]">
+            <td class="col">
+              Total de gols sofridos: <b>{{associado.golsSofridos}}</b>
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[2]">
+            <td class="col">
+              Jogos participados em 2018: <b>{{associado.jogosParticipados}}</b> de <b>{{relatorios.totalJogos}}</b>
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[2]">
+            <td class="col">
+              Confraternizações participadas em 2018: <b>{{associado.confraternizacoesParticipadas}}</b> de <b>{{relatorios.totalConfraternizacoes}}</b>
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[2]">
+            <td class="col">
+              Cartões amarelos recebidos em 2018: <b>{{associado.cartoesAmarelos}}</b>
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[2]">
+            <td class="col">
+              Cartões vermelhos recebidos em 2018: <b>{{associado.cartoesVermelhos}}</b>
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[3]">
+            <td class="col">
+              <table class="table table-stripped">
+				      	<thead>
+				      		<tr>
+				      			<button class="btn btn-success btn-block btn-lg btn-table">
+				      				Prato Preferido
+				      			</button>
+				      		</tr>
+				      	</thead>
+				        <tbody>
+				          <tr class="row no-gutters" ng-repeat="associado in associados">
+				            <td class="col-10">
+				              {{associado.prato}}
+				            </td>
+
+				            <td class="col-2 ml-auto">
+				            	1
+				            </td>
+				          </tr>
+				        </tbody>
+				      </table>
+            </td>
+          </tr>
+
+          <tr class="row no-gutters">
+            <td class="col-auto">
+              <button class="btn btn-danger btn-sm" onclick="window.location = '#!';">Voltar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

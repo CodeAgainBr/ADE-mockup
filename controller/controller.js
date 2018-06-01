@@ -259,10 +259,50 @@ angular.module('SistemaADE')
 	}
 })
 
-.controller('relatoriosCtrl', function($scope) {
-	$scope.teste = 'Relatorios';
+.controller('relatoriosCtrl', function($scope, Pagination, AssociadosService) {
+	$scope.relatorioIndividual = false;
+
+	$scope.trocarPage = function(page) {
+		var pagination = Pagination.changePage(page);
+
+		$scope.page = pagination.page;
+		$scope.aba = pagination.aba;
+	}
+
+	$scope.trocarPage(0);
+
+	AssociadosService.get();
+
+	$scope.carregarAssociado = function(index) {
+		$scope.relatorioIndividual = true;
+		// $scope.associado = $scope.associados[index];
+	}
+
+	$scope.associado = {
+		golsMarcados: 5,
+		golsSofridos: 0,
+		jogosParticipados: 10,
+		confraternizacoesParticipadas: 8,
+		cartoesAmarelos: 2,
+		cartoesVermelhos: 1
+	}
+
+	$scope.relatorios = {
+		totalJogos: 15,
+		totalConfraternizacoes: 12,
+		mediaGolsMesAtual: 2,
+		jogadorDestaqueMes: "Vitor Reis",
+		goleiroFrangoMes: "Mario"
+	}
 })
 
-.controller('opcoesCtrl', function($scope) {
-	$scope.teste = 'Opções';
+.controller('opcoesCtrl', function($scope, Pagination) {
+	$scope.trocarPage = function(page) {
+		var pagination = Pagination.changePage(page);
+
+		$scope.page = pagination.page;
+		$scope.aba = pagination.aba;
+	}
+
+	$scope.trocarPage(0);
 });

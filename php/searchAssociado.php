@@ -58,7 +58,7 @@ $associados = '[{
 		"localNascimento": "São José",
 		"rg": "1241241",
 		"cpf": "12312331212",
-		"prato": "Macarronada",
+		"prato": "Pizza",
 		"observacoes": "",
 		"telefone": "48984008400",
 		"email": "email@email.com",

@@ -1,1 +1,53 @@
-<section>{{teste}}</section>
+<section>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-cadastro">
+        <thead>
+          <tr class="row no-gutters">
+            <th class="col col-pagination col-pagination-associados">
+              <div class="btn-group" role="group">
+                <button class="btn btn-outline-success" ng-class="page[0]" ng-click="trocarPage(0)">Trocar Senha</button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row no-gutters" ng-class="aba[0]">
+            <td class="col-sm-2 col-3">
+              <label for="senhaAtual">Senha atual: </label>
+            </td>
+
+            <td class="col">
+              <input id="senhaAtual" type="password" ng-model="user.senhaAtual" class="form-control btn-sm" placeholder="Senha Atual">
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[0]">
+            <td class="col-sm-2 col-3">
+              <label for="novaSenha">Nova senha: </label>
+            </td>
+
+            <td class="col">
+              <input id="novaSenha" type="password" ng-model="user.novaSenha" class="form-control btn-sm" placeholder="Nova senha">
+            </td>
+          </tr>
+
+          <tr class="row no-gutters" ng-class="aba[0]">
+            <td class="col-sm-2 col-3">
+              <label for="confirmeSenha">Confirme a senha: </label>
+            </td>
+
+            <td class="col">
+              <input id="confirmeSenha" type="password" ng-model="user.confirmeSenha" class="form-control btn-sm" placeholder="Confirme a senha">
+            </td>
+          </tr>
+
+          <tr class="row no-gutters">
+            <td class="col-auto ml-auto">
+              <button class="btn btn-info btn-sm" onclick="window.location = '#!';">Salvar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
