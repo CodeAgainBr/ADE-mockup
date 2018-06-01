@@ -32,7 +32,7 @@
 	<link rel="stylesheet" type="text/css" href="dist/ade.css">
 </head>
 <body ng-app="SistemaADE">
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark" ng-if="auth">
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark" ng-class="navbarHidden">
     <a class="navbar-brand" href="#!">
       <i class="fas fa-futbol bg-dark"></i>
       <b>Sistema ADE</b>
@@ -74,10 +74,10 @@
 		<div class="loginScreen" ng-if="!auth" ng-controller="loginCtrl">
 			<div class="container py-5">
 				<div class="row py-5">
-				  <div class="offset-3 col-6">
+				  <div class="offset-sm-3 col-sm-6 col-12">
 				    <div class="card text-white p-5 bg-dark">
 				      <div class="card-body">
-				        <h1 style="text-align: center">Login</h1>
+				        <h1 class="text-center">Login</h1>
 				        <form>
 				          <div class="row">
 				            <input id="login" type="text" class="form-control" placeholder="Login">
@@ -98,15 +98,13 @@
 			</div>
 		</div>
   </div>
-  <script>
-  	$(document).ready(function() {
-	  	$('.navbar-brand').on('click', function(){
-		    $('.navbar-collapse').collapse('hide');
-			});
-	  	$('.navbar-nav .nav-item').on('click', function(){
-		    $('.navbar-collapse').collapse('hide');
-			});
-  	});
-  </script>
 </body>
 </html>
+
+<script>
+	$(document).ready(function() {
+		$('.navbar-nav .nav-item').click(function(){
+	    $('.navbar-collapse').collapse('hide');
+		});
+	});
+</script>

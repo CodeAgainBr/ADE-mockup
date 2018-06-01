@@ -7,9 +7,11 @@ angular.module('SistemaADE')
 		success: function(data) {
 			if(data != 1) {
 				$rootScope.auth = true;
+				$rootScope.navbarHidden = "";
 				$rootScope.user = JSON.parse(data);
 			} else {
 				$rootScope.auth = false;
+				$rootScope.navbarHidden = "hidden";
 			}
 		}
 	});
@@ -19,6 +21,7 @@ angular.module('SistemaADE')
 			url: "php/logout.php",
 			success: function() {
 				$rootScope.auth = false;
+				$rootScope.navbarHidden = "hidden";
 				$rootScope.user = null;
 				window.location.href = "#!";
 			}
@@ -41,6 +44,7 @@ angular.module('SistemaADE')
 					alert('Login ou senha incorretos!');
 				} else {
 					$scope.auth = true;
+					$scope.navbarHidden = "";
 					$scope.user = JSON.parse(data);
 
 					$scope.$apply();
